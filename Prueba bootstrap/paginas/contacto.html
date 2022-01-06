@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CONTACTO</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="../CSS/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre&display=swap" rel="stylesheet">
     
 </head>
 <body>
     <header class="container-fluid">
         <nav class="navbar menu">
-            <img src="./IMAGENES/Logo.png" alt="" class="menu__image">
+            <img src="../Imagenes/Logo.png" alt="" class="menu__image">
             <ul class="nav menu__lista">
                 <li class="active menu__item"><a href="../index.html">HOME</a></li>
                 <li class="active menu__item"><a href="./Aprende.html">APRENDE</a></li>
@@ -24,7 +24,7 @@
     </header>
 <main class="container-fluids contacto">
     <div>
-        <form action="" class="formulario">
+        <form action="" class="formulario fondo--rosaClaro">
             <h3>Contacto</h3>
             <label for="correo">Dejanos tu Nombre</label>
             <br>
@@ -42,7 +42,11 @@
             <br>
             <input type="text"placeholder="Agrega tu consulta">
             <br>
-            <input type="submit" value="ENVIAR" class="formulario__boton">
+            <div class="boton">
+                <button class="boton--enviar">Enviar</button>
+                <button class="boton--cancelar">Cancelar</button>
+            </div>
+            
         </form>
     </div>
     
