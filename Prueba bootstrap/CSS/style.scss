@@ -1,0 +1,239 @@
+$Rosa_Base:#FFCDcd;
+$Rosa_claro: #ffecec;
+$ancho: 100px;
+$alto: 100px;
+
+/* asignando mapa de colores para el background*/
+$colores :(
+    rosaBase: #FFCDcd,
+    rosaClaro: #ffecec,
+);
+
+@each $valor, $color in $colores {
+    .fondo--#{$valor}{
+        background-color: $color;
+    }
+}
+
+@mixin medidasImagen ($ancho, $alto){
+        width: $ancho  ;
+        height: $alto;
+}
+
+*{
+    font-family: "abhaya libre", sans-serif ;
+    }
+    
+    body{
+        
+        margin: 0;
+        padding: 0;
+        display: grid;
+        grid-template-areas: 
+        "header header header"
+        "body body body" 
+        "body body body"   
+        "footer footer footer ";
+    
+        grid-template-columns: repeat(3,auto);
+        grid-template-rows: repeat(4,auto) ;
+        
+    }
+    
+    /*propiedades del header*/
+    
+    header {
+        grid-area: header;
+    }
+    .menu{
+        
+        
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: $Rosa_Base;
+        padding: 10px 30px;
+        font-size: 20px;  
+        background-image: linear-gradient(to top, #f8e6e6, $Rosa_Base);
+        &__image{
+            width: $ancho;
+            height: $alto;
+        }
+        &__lista{
+            display: flex;
+            justify-content: space-evenly;
+            width: 100%;
+            
+        }
+        &__item{
+            list-style: none;
+            & a{
+                text-decoration: none;
+                 color: rgb(77, 66, 66);
+                 &:hover{
+                     background-color: $Rosa_claro;
+                     color: red;
+                    font-size: x-large;
+                 }
+            }
+            &:hover {
+                transform: translate(5px, 10px);
+            }
+        }
+    }
+     
+    /*propiedades del home o index*/
+    .main{
+        grid-area: body;
+        background-image: url(../Imagenes/encabezado.png);
+        
+        background-position: center;
+        background-size: cover;
+        width: 92.5%;
+        height: 100vh;
+        margin: 5px;
+        padding: 10px 30px;
+        display: flex;
+        flex-direction: column;   
+        align-items: center;
+        justify-content: center;
+        &__text{
+            text-align: center;
+            color: white;
+            font-size: xx-large;
+            & a {
+                background-color: $Rosa_Base;
+                text-decoration: none;
+                color: white;   
+                font-size: xx-large;
+            }
+        }
+        
+    }
+    
+    /* propiedades del footer*/
+    footer{
+        grid-area: footer;
+        background-color: $Rosa_Base;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items:flex-end;
+        padding: 10px;
+        color: rgb(77, 66, 66);
+    }
+    .redes{
+        height: 50px;
+    }
+    
+    /* propiedades la pagina contacto */
+    .contacto{
+        grid-area: body;
+        height: auto;
+        margin: 5px;  
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &__mapa {
+            margin: 5px;
+            padding: 10px;
+            border: solid;
+            width: 600px;
+            border-color: $Rosa_Base;
+            background-color: $Rosa_claro;
+            display:flex;
+            align-items: center;
+
+        }
+    }
+    .formulario{
+        
+        margin: 5px;
+        padding: 10px;
+        width: 500px;
+        border: solid;
+        display: flex;
+        flex-direction: column;
+        border-color:$Rosa_Base;
+       
+        color: rgb(77, 66, 66);
+        
+    }
+    .boton{
+            display: flex;
+            margin-top: 10px;
+            width:150px;
+            
+            &--enviar{
+                @extend .boton;
+                color: rgb(77, 66, 66);
+                background-color: #ffcdcd3b;
+                border-color: $Rosa_Base;
+            }
+            &--cancelar{
+                @extend .boton--enviar;
+                color: salmon;
+                
+            }
+        }
+    
+    
+    /* propiedades de la pagina aprende*/
+    
+    .aprende {
+        grid-area: body;
+        height: auto;
+        width: auto;
+        margin: 5px;      
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        &__imagen {
+            border-style: solid;
+        background-color: $Rosa_claro;
+        border-color: $Rosa_Base;
+        margin: 10px;
+        padding: 10px;
+        @include medidasImagen(500px, 300px )
+        
+        }
+        &__texto {
+            display: flex;
+        flex-direction: column;
+        color: $Rosa_Base;
+        background-color: $Rosa_claro;
+        border-color: $Rosa_Base;
+        border-style: solid;
+        
+        border-color: $Rosa_Base;
+        margin: 10px;
+        padding: 10px;
+        width: 500px;
+        height: 300px;
+        color: rgb(77, 66, 66);
+        }
+    }
+    
+    /*propiedades pagina Nail Art*/
+    .nail{
+        grid-area: body;
+        height: auto;
+        margin: 5px;      
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        &__imagen {
+            border-style: solid;
+            background-color: $Rosa_claro;
+            border-color: $Rosa_Base;
+            margin: 10px;
+            padding: 10px;
+            @include medidasImagen(300px,300px)
+        }
+    }
+    
+    
