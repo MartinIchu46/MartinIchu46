@@ -5,15 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CONTACTO</title>
+
+    <!-- Link a Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="./CSS/style.css">
+
+    <!-- Link a la hoja de estilos-->
+    <link rel="stylesheet" href="../CSS/style.css">
+
+    <!-- Link a google fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre&display=swap" rel="stylesheet">
     
 </head>
 <body>
     <header class="container-fluid">
         <nav class="navbar menu">
-            <img src="./IMAGENES/Logo.png" alt="" class="menu__image">
+            <img src="../Imagenes/Logo.png" alt="" class="menu__image">
             <ul class="nav menu__lista">
                 <li class="active menu__item"><a href="../index.html">HOME</a></li>
                 <li class="active menu__item"><a href="./Aprende.html">APRENDE</a></li>
@@ -24,7 +30,8 @@
     </header>
 <main class="container-fluids contacto">
     <div>
-        <form action="" class="formulario">
+        <!-- Formulario -->
+        <form action="" class="formulario fondo--rosaClaro">
             <h3>Contacto</h3>
             <label for="correo">Dejanos tu Nombre</label>
             <br>
@@ -42,11 +49,17 @@
             <br>
             <input type="text"placeholder="Agrega tu consulta">
             <br>
-            <input type="submit" value="ENVIAR" class="formulario__boton">
+            <div class="boton">
+                <button class="boton--enviar">Enviar</button>
+                <button class="boton--cancelar">Cancelar</button>
+            </div>
+            
         </form>
     </div>
     
     <br>
+
+    <!-- Mapa de google Maps -->
     <div class="contacto__mapa"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.1942274279536!2d-58.69346568561103!3d-34.54863738047384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcbc54d8faa413%3A0x79c7c6474f60c556!2sGuido%20y%20Spano%2024%2C%20B1661AVA%20Bella%20Vista%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1637804477617!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div>
     <br>
     

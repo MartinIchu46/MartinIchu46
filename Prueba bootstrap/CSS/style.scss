@@ -1,0 +1,341 @@
+/* asginacion de nombre a atributos*/
+$Rosa_Base:#FFCDcd;
+$Rosa_claro: #ffecec;
+$ancho: 100px;
+$alto: 100px;
+
+
+/* asignando mapa de colores para el background*/
+$colores :(
+    rosaBase: #FFCDcd,
+    rosaClaro: #ffecec,
+);
+
+@each $valor, $color in $colores {
+    .fondo--#{$valor}{
+        background-color: $color;
+    }
+}
+
+@mixin medidasImagen ($ancho, $alto){
+        width: $ancho  ;
+        height: $alto;
+}
+
+*{ /*se aplicara en todas las paginas*/
+    font-family: "abhaya libre", sans-serif ;
+    padding: 0;
+    margin: 0;
+    }
+    
+    body{ /* atributos del body que se aplica en todas las paginas*/
+        
+        margin: 0;
+        padding: 0;
+        display: grid;
+        grid-template-areas: 
+        "header header header"
+        "body body body" 
+        "body body body"   
+        "footer footer footer ";
+    
+        grid-template-columns: repeat(3,auto);
+        grid-template-rows: repeat(4,auto) ;
+        
+    }
+    
+    /*propiedades del header*/
+    
+    header {
+        grid-area: header;
+    }
+    
+    .menu{
+        
+        
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: $Rosa_Base;
+        padding: 0;
+        margin: 0;
+        font-size: 20px;  
+        background-image: linear-gradient(to top, #f8e6e6, $Rosa_Base);
+        &__image{
+            width: $ancho;
+            height: $alto;
+        }
+        &__lista{
+            display: flex;
+            justify-content: space-evenly;
+            width: 100%;
+            
+        }
+        &__item{
+            list-style: none;
+            & a{
+                text-decoration: none;
+                 color: rgb(77, 66, 66);
+                 &:hover{
+                     background-color: $Rosa_claro;
+                     color: red;
+                    font-size: x-large;
+                 }
+            }
+            &:hover {
+                transform: translate(5px, 10px);
+            }
+        }
+    }
+  
+    /*propiedades del home o index*/
+    .main{
+        grid-area: body;
+        background-image: url(../Imagenes/encabezado.png);
+        
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100vh;
+        margin: 5px;
+        padding: 10px 30px;
+        display: flex;
+        flex-direction: column;   
+        align-items: center;
+        justify-content: center;
+        &__text{
+            text-align: center;
+            color: white;
+            font-size: xx-large;
+            & a {
+                background-color: $Rosa_Base;
+                text-decoration: none;
+                color: white;   
+                font-size: xx-large;
+            }
+        }
+        
+    }
+    
+    /* propiedades del footer*/
+    footer{
+        grid-area: footer;
+        background-color: $Rosa_Base;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items:flex-end;
+        padding: 10px;
+        color: rgb(77, 66, 66);
+    }
+    .redes{
+        height: 50px;
+    }
+    
+    /* propiedades la pagina contacto */
+    .contacto{
+        grid-area: body;
+        height: auto;
+        margin: 5px;  
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &__mapa {
+            margin: 5px;
+            padding: 10px;
+            border: solid;
+            width: 600px;
+            border-color: $Rosa_Base;
+            background-color: $Rosa_claro;
+            display:flex;
+            align-items: center;
+
+        }
+    }
+    .formulario{
+        
+        margin: 5px;
+        padding: 10px;
+        width: 500px;
+        border: solid;
+        display: flex;
+        flex-direction: column;
+        border-color:$Rosa_Base;
+       
+        color: rgb(77, 66, 66);
+        
+    }
+    .boton{
+            display: flex;
+            margin-top: 10px;
+            width:150px;
+            
+            &--enviar{
+                @extend .boton;
+                color: rgb(77, 66, 66);
+                background-color: #ffcdcd3b;
+                border-color: $Rosa_Base;
+            }
+            &--cancelar{
+                @extend .boton--enviar;
+                color: salmon;
+                
+            }
+        }
+    
+    
+    /* propiedades de la pagina aprende*/
+    
+    .aprende { /*atributos generales para la pagina*/
+        grid-area: body;
+        height: auto;
+        width: auto;
+        margin: 5px;      
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        &__imagen { /*atributos para la imagen de los cursos*/
+        border-style: solid;
+        background-color: $Rosa_claro;
+        border-color: $Rosa_Base;
+        margin: 10px;
+        padding: 10px;
+        @include medidasImagen(500px, 300px )
+        
+        }
+        &__texto {
+            display: flex;
+        flex-direction: column;
+        color: $Rosa_Base;
+        background-color: $Rosa_claro;
+        border-color: $Rosa_Base;
+        border-style: solid;
+        
+        border-color: $Rosa_Base;
+        margin: 10px;
+        padding: 10px;
+        width: 500px;
+        height: 300px;
+        color: rgb(77, 66, 66);
+        }
+    }
+    
+    /*propiedades pagina Nail Art*/
+
+    .nail{ /*atributos para la pagina de galeria de imagenes*/
+        grid-area: body;
+        height: auto;
+        margin: 5px;      
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        &__imagen { /*atributos para las imagenes de la pagina*/
+            border-style: solid;
+            background-color: $Rosa_claro;
+            border-color: $Rosa_Base;
+            margin: 10px;
+            padding: 10px;
+            @include medidasImagen(300px,300px)
+        }
+    }
+
+    @media (max-width: 480px) {
+        .formulario {
+            width: 100%;
+        }
+        .nail {
+            display: flex;
+            flex-direction: column;
+        }
+        .aprende {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            &__imagen {
+                width: 100vw;
+            }
+            &__texto {
+                
+                width: 100vw;
+            }
+        }
+    }
+    /* atributos segun el tamaño de dispositivo que se use*/
+    @media (max-width: 960px) {
+        .nail {
+            display: flex;
+            flex-direction: column;
+        }
+        
+    }
+    @media (min-width: 481px) and (max-width: 1024px) {
+        .aprende {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin-right: 0;
+            &__imagen {
+                width: 450px;
+                height: 300px;
+                
+            }
+            &__texto {
+                width: 450px;
+                height: 300px;
+            }
+        }
+    }
+    @media (max-width: 767px) {
+        .contacto{
+            &__mapa {
+                width: 100%;
+            }
+        };
+    body {
+        
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 700px;
+    }
+    .menu {
+        display: flex;
+        flex-direction: column;
+    }
+    .main {
+        background-repeat: no-repeat;
+       
+        &__text {
+            font-size: medium ; 
+        }
+        &__lista {
+            display: block;
+            
+        }
+        a {
+            font-size: medium;
+        }
+    
+    .aprende {
+        display: flex;
+        flex-direction: column;
+        &__imagen {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        &__texto {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+    }
